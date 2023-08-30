@@ -14,11 +14,11 @@ const Comp1 = () => {
         var horas = (segundos / 3600)        
         var minutos = (segundos / 60)
         var segundosR = (segundos % 60)
-
+        
         setTiempo(`El tiempo consta de: 
-        ${horas} Horas,
-        ${minutos} Minutos,
-        ${segundosR} Segundos`)
+        ${horas.toFixed()} Horas,
+        ${minutos.toFixed(1)} Minutos,
+        ${segundosR.toFixed(1)} Segundos`)
     }
 
     return(
@@ -27,7 +27,7 @@ const Comp1 = () => {
         <h2> Convertir Segundos </h2>
         <input type="text" value={segundos}
         onChange={(event) => onSetSegundos(event)}/>
-        <button onClick={() => ConvertirTiempo()}> Segundos </button>
+        <button onClick={() => ConvertirTiempo()}> Convertir </button>
         <p>{tiempo}</p>
         </>
     )
