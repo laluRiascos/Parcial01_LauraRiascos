@@ -28,8 +28,10 @@ const Comp2 = () => {
         <>
         <h1> Ejercicio #02 </h1>
         <h2> Total a Pagar </h2>
+        <p> Diligencia el tiempo de la llamada en segundos: </p>
         <input type="text" value={tiempo}
         onChange={(event) => onSetTiempo(event)}/>
+        <br/>
         <button onClick={() => CalcularPrecio()}> Ver Costo </button>
         <p>{costo}</p>
         </>

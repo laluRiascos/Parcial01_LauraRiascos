@@ -3,11 +3,16 @@ import { useState } from 'react';
 const Comp3 = () => {
 
     const [hora, setHora] = useState()
+    const [minutos, setMinutos] = useState()
     const [nombre, setNombre] = useState()
     const [saludo, setSaludo] = useState()
 
     const onSetHora = ( evt ) => {
         setHora( evt.target.value ) 
+    }
+
+    const onSetMinutos = ( evt ) => {
+        setMinutos( evt.target.value ) 
     }
 
     const onSetNombre = ( evt ) => {
@@ -25,6 +30,7 @@ const Comp3 = () => {
         }if (horaH > 19){
             setSaludo(`Buenos Noches, ${nombre}`);
         }
+
     }
 
     return(
@@ -37,8 +43,11 @@ const Comp3 = () => {
         <br/>
         <br/>
         <p> Diligencia la hora en formato 24h </p>
+        <p> Horas ||| Minutos </p>
         <input type="text" value={hora}
         onChange={(event) => onSetHora(event)}/>
+        <input type="text" value={minutos}
+        onChange={(event) => onSetMinutos(event)}/>
         <br/>
         <button onClick={() => BrindarSaludo()}> Saludo </button>
         <p>{saludo}</p>
